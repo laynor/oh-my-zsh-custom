@@ -28,7 +28,7 @@ if [[ "$TERM" == screen* ]]; then
         screen -X title "$SCREEN_WIN_TITLE [`mypwd`]"
     }
 
-    function screen_title()
+    function screen-title()
     {
         export SCREEN_WIN_TITLE="$*"
         screen -X title "$SCREEN_WIN_TITLE [`mypwd`]"
