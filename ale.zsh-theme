@@ -18,7 +18,7 @@ local ale_p_um=$ale_p_um_cbrac'['$ale_p_um_cu'%n'$ale_p_um_cat'@'$ale_p_um_cm'%m
 local ale_p_pwd_c='%{$reset_color%}%{$fg_bold[magenta]%}'
 local ale_p_pwd=$ale_p_pwd_c'${PWD/#$HOME/~}'
 
-parse_git_branch() {
+function parse_git_branch() {
 	branch=`git branch --no-color 2> /dev/null | \grep  '*' | sed s/\*\ //`
 	if [[ -n "$branch" ]]; then
 		printf " [%s]" $branch
@@ -43,7 +43,17 @@ function precmd {
     fi
 }
 
-PROMPT=$ale_p_um' '$ale_p_pwd$ale_p_git$ale_p_end
+function rvm-info () {
+    if which rvm-prompt &> /dev/null; then
+        local foo=`rvm-prompt | cut -sd '@' -f2`
+        if [[ $foo != "" ]]; then
+            echo "(%{$fg_bold[red]%}gem:$foo%{$reset_color%})"
+        fi
+    fi
+}
+
+ale_p_rvm='$(rvm-info)'
+PROMPT=$ale_p_rvm$ale_p_um' '$ale_p_pwd$ale_p_git$ale_p_end
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 
 RPROMPT='${return_status}[ %T ]%{$reset_color%}'
