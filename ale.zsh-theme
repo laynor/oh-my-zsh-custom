@@ -27,7 +27,7 @@ function parse_git_branch() {
 	fi
 }
 # local git_branch='$(parse_git_branch)%{$reset_color%}' #'$(git_prompt_info)%{$reset_color%}'
-local git_branch='$(git_prompt_info)%{$reset_color%}'
+local git_branch='$(git_prompt_info)$(git_remote_status)'
 local ale_p_git_c='%{$reset_color$fg[white]%}'
 local ale_p_git=$ale_p_git_c$git_branch
 
@@ -87,5 +87,5 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg_bold[magenta]%}R"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg_bold[yellow]%}U"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[cyan]%}?"
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{$fg[cyan]%}↓"
-ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg[cyan]%}?↑"
+ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{$fg[cyan]%}↑"
 ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{$fg[cyan]%}↕"
