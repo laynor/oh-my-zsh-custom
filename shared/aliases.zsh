@@ -1,6 +1,4 @@
 alias ls='ls --color=auto --group-directories-first'
-alias l='ls -lh'
-alias la='ls -lhA'
 alias makedebug='make DEBUG="-O0 -gdwarf-4 -g3 -fvar-tracking-assignments"'
 alias zsed='sed -r '
 alias rckill="pgrep -lf python| grep -i remote | sed  's/\([0-9][0-9]*\).*/\1/' | xargs kill"
@@ -8,3 +6,5 @@ alias tt='~/Dropbox/timetable.py ~/Documenti/timetable.txt'
 alias ex='extract'
 alias grep='grep -nI'
 alias date='date "+%a %Y-%m-%d %H:%M"'
+alias l='ls++ --potsf'
+alias la='l -A'
