@@ -6,8 +6,12 @@ alias tt='~/Dropbox/timetable.py ~/Documenti/timetable.txt'
 alias ex='extract'
 alias grep='grep -nI'
 alias date='date "+%a %Y-%m-%d %H:%M"'
-unalias la
-alias la='ls++ --potsf -A'
-alias l='ls++ --potsf'
+
+#emacs
 alias e='EMACS_PROFILE=home-linux emacsclient --alternate-editor="" -c' 
 alias en='EMACS_PROFILE=home-linux emacsclient --alternate-editor="" -nw'
+
+# ls
+unalias la
+alias l='ls++ --potsf'
+alias la='l -A'
