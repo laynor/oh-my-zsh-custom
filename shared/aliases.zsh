@@ -8,8 +8,8 @@ alias grep='grep -nI'
 alias date='date "+%a %Y-%m-%d %H:%M"'
 
 #emacs
-alias e='EMACS_PROFILE=home-linux emacsclient --alternate-editor="" -c' 
-alias en='EMACS_PROFILE=home-linux emacsclient --alternate-editor="" -nw'
+alias e='emacsclient --alternate-editor="" -c' 
+alias en='emacsclient --alternate-editor="" -nw'
 
 # ls
 unalias la
