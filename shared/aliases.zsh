@@ -15,3 +15,4 @@ alias en='emacsclient --alternate-editor="" -nw'
 unalias la
 alias l='ls++ --potsf'
 alias la='l -A'
+alias axel='axel --alternate'
